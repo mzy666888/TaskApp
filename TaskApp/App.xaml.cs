@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Threading;
 using Prism.Ioc;
 using TaskApp.Views;
 
@@ -16,7 +17,7 @@ namespace TaskApp
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-
+            containerRegistry.RegisterSingleton<Dispatcher>(_ => Current.Dispatcher);
         }
     }
 }

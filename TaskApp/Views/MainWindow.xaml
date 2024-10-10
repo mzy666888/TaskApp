@@ -13,8 +13,20 @@
     prism:ViewModelLocator.AutoWireViewModel="True"
     mc:Ignorable="d">
     <Grid>
-        <Button Command="{Binding RunTaskCommand}" Content="Run Task">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Button
+            Margin="4"
+            Command="{Binding RunTaskCommand}"
+            Content="Run Task">
         </Button>
         <!--<ContentControl prism:RegionManager.RegionName="ContentRegion" />-->
+        <ListBox
+            Grid.Row="1"
+            Margin="4"
+            ItemsSource="{Binding Items}">
+        </ListBox>
     </Grid>
 </Window>
